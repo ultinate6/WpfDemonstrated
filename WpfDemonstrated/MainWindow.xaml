@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfDemonstrated.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDemonstrated"
+        mc:Ignorable="d"
+        Title="Сбор информации" Height="755.67" Width="1255.467" Loaded="Window_Loaded">
+    <Grid Margin="0,0,3.6,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="208*"/>
+            <ColumnDefinition Width="587*"/>
+            <ColumnDefinition Width="389*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="Mai" HorizontalAlignment="Left" FontSize="16" Margin="43,96,0,461.4" AutoGenerateColumns="False" Width="772" Grid.ColumnSpan="3" MouseDoubleClick="Mai_MouseDoubleClick" RenderTransformOrigin="0.534,0.53" >
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.1"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path= NameObjekt}" IsReadOnly="True" Header="Имя обьекта" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= TimeStart}" IsReadOnly="True" Header="Время старта" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path= TimeStop}" IsReadOnly="True" Header="Время остановки" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path= ShemeCheck}" IsReadOnly="True" Header="Схема проверки" Width="140"/>
+                <DataGridTextColumn Binding="{Binding Path= amountTime}" IsReadOnly="True" Header="Инервал измерения" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="first_Check"  HorizontalAlignment="Left" Height="192" Margin="43,270,0,0" VerticalAlignment="Top" Width="882" AutoGenerateColumns="False" Grid.ColumnSpan="4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path= CreationDatef}" IsReadOnly="True" Header="Дата/Время" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= UA}" IsReadOnly="True" Header="UA" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= IA}" IsReadOnly="True" Header="IA" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= PA}" IsReadOnly="True" Header="PA" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= QA}" IsReadOnly="True" Header="QA" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= SA}" IsReadOnly="True" Header="SA" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= Freq}" IsReadOnly="True" Header="Freq" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path= sigmaUy}" IsReadOnly="True" Header="sigmaUy" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="Second_Check" HorizontalAlignment="Left" Height="172" Margin="43,467,0,0" VerticalAlignment="Top" Width="1192" AutoGenerateColumns="False" Grid.ColumnSpan="4">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= CreationDates}" Header="Дата/Время" Width="110"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= UAB}" Header="UAB" Width="40"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= UBC}" Header="UBC" Width="40"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= UCA}" Header="UCA" Width="40"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= IAB}" Header="IAB" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= IBC}" Header="IBC" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= ICA}" Header="ICA" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= IA}" Header="IA" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= IB}" Header="IB" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= IC}" Header="IC" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= P0}" Header="P0" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= PP}" Header="PP" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= Q0}" Header="Q0" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= QP}" Header="QP" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= S0}" Header="S0" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= SP}" Header="SP" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= U0}" Header="U0" Width="50"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= UP}" Header="UP" Width="50"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= I0}" Header="I0" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= IP}" Header="IP" Width="30"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= K0}" Header="K0" Width="50"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= Freq}" Header="Freq" Width="80"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= sigmaUy}" Header="SigmaUy" Width="70"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= sigmaUyAB}" Header="SigmaUyAB" Width="70"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= sigmaUyBC}" Header="SigmaUyBC" Width="70"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path= sigmaUyCA}" Header="SigmaUyCA" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="FileLocation" HorizontalAlignment="Left" Height="23" Margin="43,68,0,0" TextWrapping="Wrap" Text="C:\Users\Artur\Desktop\PKE" VerticalAlignment="Top" Width="302" KeyUp="TextBox_KeyUp" Grid.ColumnSpan="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="43,47,0,0" TextWrapping="Wrap" Text="Укажите путь к файлу" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button Content="Сохранить" Grid.Column="2" HorizontalAlignment="Left" Margin="392.995,67,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="-0.514,-1.646" Click="Button_Click" Height="24"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="139.995,47,0,0" TextWrapping="Wrap" Text="Сохранить файл в Xlsx формат" VerticalAlignment="Top"/>
+        <TextBox x:Name="DirectoryPath" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="139.995,68,0,0" TextWrapping="Wrap" Text="C:\Users\Artur\Desktop\GGGGWP" VerticalAlignment="Top" Width="236"/>
+    </Grid>
+</Window>
